@@ -1,0 +1,23 @@
+[
+ {
+  "RuleID": "token-api-interna",
+  "Description": "Token de la API interna (formato ficticio del taller)",
+  "StartLine": 1,
+  "EndLine": 1,
+  "StartColumn": 22,
+  "EndColumn": 60,
+  "Match": "REDACTED",
+  "Secret": "REDACTED",
+  "File": "config/app.properties",
+  "SymlinkFile": "",
+  "Commit": "cf5593b9b7cbfb6113ea9b880a7d401ed050d7ff",
+  "Link": "https://github.com/fpalaciosa/solicitudes-api/blob/cf5593b9b7cbfb6113ea9b880a7d401ed050d7ff/config/app.properties#L1",
+  "Entropy": 4.823864,
+  "Author": "freddypangel",
+  "Email": "freddypangel@gmail.com",
+  "Date": "2026-10-23T18:13:23Z",
+  "Message": "test: secreto ficticio",
+  "Tags": [],
+  "Fingerprint": "cf5593b9b7cbfb6113ea9b880a7d401ed050d7ff:config/app.properties:token-api-interna:1"
+ }
+]

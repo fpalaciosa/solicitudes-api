@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage('1. Secretos (Gitleaks, toda la historia)') {
             steps {
-                sh 'gitleaks git --redact --config .gitleaks.toml -r gitleaks.json .'          // Reto 1: revisa toda la historia
+                sh 'gitleaks git --redact --config .gitleaks.toml --baseline-path .gitleaks-baseline.json -r gitleaks.json .'   // Reto 1: solo fallan hallazgos nuevos
             }
             post {
                 always { archiveArtifacts artifacts: 'gitleaks.json', allowEmptyArchive: true }

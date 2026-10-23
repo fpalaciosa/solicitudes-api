@@ -35,6 +35,12 @@ pipeline {
             }
         }
 
+        stage('2b. Árbol de dependencias') {          // Reto 2: versión secuencial
+            steps {
+                sh 'mvn -B dependency:tree'
+            }
+        }
+
         stage('3. Publicar artefacto') {
             steps {
                 archiveArtifacts artifacts: 'target/solicitudes-api.jar', fingerprint: true

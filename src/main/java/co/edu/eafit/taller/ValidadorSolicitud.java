@@ -21,7 +21,7 @@ public class ValidadorSolicitud {
         }
         if (fechaRadicacion == null) {
             errores.add("FECHA_REQUERIDA");
-        } else if (fechaRadicacion.isAfter(hoy)) {
+        } else if (fechaRadicacion.isBefore(hoy)) {
             errores.add("FECHA_FUTURA");
         }
         return errores;

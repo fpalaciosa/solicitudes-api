@@ -26,18 +26,21 @@ pipeline {
             }
         }
 
-        stage('2. Build y pruebas unitarias') {
-            steps {
-                sh 'mvn -B clean verify'
-            }
-            post {
-                always { junit 'target/surefire-reports/*.xml' }
-            }
-        }
-
-        stage('2b. Árbol de dependencias') {          // Reto 2: versión secuencial
-            steps {
-                sh 'mvn -B dependency:tree'
+        stage('2. Build y dependencias (paralelo)') {   // Reto 2: versión en paralelo
+            parallel {
+                stage('2a. Build y pruebas unitarias') {
+                    steps {
+                        sh 'mvn -B clean verify'
+                    }
+                    post {
+                        always { junit 'target/surefire-reports/*.xml' }
+                    }
+                }
+                stage('2b. Árbol de dependencias') {
+                    steps {
+                        sh 'mvn -B dependency:tree'
+                    }
+                }
             }
         }
 
